@@ -1,0 +1,164 @@
+package com.thesettingspagefrape;
+
+import com.sunil.splash.Home;
+import com.sunil.splash.R;
+import com.sunil.splash.SetAlarm;
+
+import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
+import android.media.AudioManager;
+import android.os.Bundle;
+import android.os.Vibrator;
+import android.view.Menu;
+import android.view.View;
+import android.widget.SeekBar;
+import android.widget.SeekBar.OnSeekBarChangeListener;
+import android.widget.Button;
+import android.widget.TextView;
+import android.widget.ToggleButton;
+
+
+
+
+public class SettingsActivity extends Activity {
+
+	//declarations
+	//ToggleButton VibrBtn;
+	SeekBar VolBar;
+	TextView //TextVibr, 
+	TextVol;
+	//Vibrator vibra;
+	
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_settings);
+        //VibrBtn = (ToggleButton) findViewById(R.id.VibrBtn);
+        VolBar = (SeekBar) findViewById(R.id.VolBar);
+        //TextVibr = (TextView) findViewById(R.id.TextVibr);
+        TextVol = (TextView) findViewById(R.id.TextVol);
+    }
+        /*
+         * @Reference: http://stackoverflow.com/questions/5775973/how-can-give-vibrate-permission
+         * @Reference: http://developer.android.com/guide/topics/ui/controls/togglebutton.html
+         * @author: Stephen Keogh Goode, x11387451
+         */
+        
+    
+    /*public void onVibrBtnClicked(View view) {
+        	* Enable vibrate
+            *boolean on = ((ToggleButton) view).isChecked();
+            *if (on) {
+            	*Vibrator vibra = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);    
+               *public void onClick(View view) {
+                 *       if(view==VibrBtn){ 
+                *        vibra.vibrate(300000);
+               *         WHEN ALARM RINGS
+              /  }
+            	
+               
+            } else {
+                // Disable vibrate
+            	Vibrator vibra = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);    
+                public void onClick(View view) {
+                        if(view==VibrBtn){ 
+                        vibra.vibrate(0);
+            }
+        }
+    
+    }
+				
+        
+        /*
+         * I learned how to implement a volume seek bar on StackOverflow.com
+         * @reference: http://stackoverflow.com/questions/10134338/using-seekbar-to-control-volume-in-android
+         * Volume Seekbar
+         * @Author: Stephen Keogh Goode, x11387451
+         * 	
+         */
+    
+        class Volume extends Activity 
+					    	{
+					    	   
+		//setting up the Volume Seekbar widget and to work with the Audio Manager of the device
+			    	    private SeekBar volBar = null;
+			    	    private AudioManager aMan = null; 
+			
+			    	    @Override
+			    	    public void onCreate(Bundle savedInstanceState) 
+			    	    {
+			    	        
+			    	    	super.onCreate(savedInstanceState);
+			    	    	//set the audio to be available through the Audio Manager
+			    	        setVolumeControlStream(AudioManager.STREAM_MUSIC);
+			    	        setContentView(R.layout.activity_settings);
+			    	        ControlVol();
+			    	    }
+			
+			    	    private void ControlVol()
+			    	    {
+			    	        try
+			    	        {
+			    	           
+			    	            aMan = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
+			    	            
+			    	            volBar.setMax(aMan.getStreamMaxVolume(AudioManager.STREAM_MUSIC));
+			    	            
+			    	            volBar.setProgress(aMan.getStreamVolume(AudioManager.STREAM_MUSIC));   
+			
+			    	            volBar.setOnSeekBarChangeListener(new OnSeekBarChangeListener() 
+			    	            
+			    	            {
+			    	                @Override
+			    	                public void onStopTrackingTouch(SeekBar arg0) 
+			    	                {
+			    	                }
+			
+			    	                @Override
+			    	                public void onStartTrackingTouch(SeekBar arg0) 
+			    	                {
+			    	                }
+			
+			    	                @Override
+			    	                public void onProgressChanged(SeekBar arg0, int progress, boolean arg2) 
+			    	                {
+			    	                    aMan.setStreamVolume(AudioManager.STREAM_MUSIC,
+			    	                            progress, 0);
+		    	                }
+		    	            });
+		    	        }
+					    	        catch (Exception e) 
+					    	        {
+					    	            e.printStackTrace();
+					    	        }
+		
+			    	    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.settings, menu);
+        return true;
+        
+        Button B1 = (Button) findViewById(R.id.B1);
+		B1.setOnClickListener(new View.OnClickListener() {
+			
+			
+			
+			public void onClick(View v) {
+				
+				Intent intent = new Intent(SettingsActivity.this, About.class);
+				startActivity(intent);
+    };
+		});
+    }
+		
+					    	}
+
+					    	
+};
+
+
+
+					    	

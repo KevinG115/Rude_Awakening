@@ -1,0 +1,19 @@
+package com.sunil.splash;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.widget.Button;
+
+public class B1Activty extends Activity {
+	
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.setalarm);
+		Button B1 = (Button)findViewById(R.id.B1);
+		
+		
+	}
+	
+
+}

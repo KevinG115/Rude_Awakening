@@ -1,0 +1,42 @@
+package com.sunil.splash;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
+import android.widget.Toast;
+
+public class ButtonControls extends Activity
+{
+Button b1,b2;
+
+public void onCreate(Bundle savedInstanceState)
+{
+                                super.onCreate(savedInstanceState);
+                                setContentView(R.layout.home);
+
+b1 = (Button) findViewById(R.id.ButtonA);
+b2 = (Button) findViewById(R.id.ButtonA);
+
+b1.setOnClickListener(new OnClickListener()
+{
+public void onClick(View v)
+{
+Toast msg = Toast.makeText(getBaseContext(),
+                                                                                "You have clicked Button 1", Toast.LENGTH_LONG);
+                                                                msg.show();
+}
+                                });
+
+b2.setOnClickListener(new OnClickListener()
+{
+public void onClick(View v)
+{
+Toast msg = Toast.makeText(getBaseContext(),
+                                                                                "You have clicked Button 2", Toast.LENGTH_LONG);
+ msg.show();
+}
+                                });
+ }
+}

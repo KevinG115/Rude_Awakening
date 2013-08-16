@@ -1,0 +1,15 @@
+package com.sunil.splash;
+
+import android.content.Intent;
+import android.view.View;
+
+public class buttons {
+	ButtonA.setOnClickListener(){    
+	    public void onCLick(View v){
+	      Intent i=new Intent(
+	             YouCurrentClass.this,
+	             NameOfJaveInWhichYouWantToMove.class);
+	      startActivity(i);
+	    }
+	};
+}

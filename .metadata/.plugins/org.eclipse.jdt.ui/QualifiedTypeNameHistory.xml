@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="android.R"/>
+<fullyQualifiedTypeName name="android.view.View"/>
+<fullyQualifiedTypeName name="android.content.Intent"/>
+<fullyQualifiedTypeName name="android.view.animation.Animation"/>
+<fullyQualifiedTypeName name="android.view.animation.AlphaAnimation"/>
+<fullyQualifiedTypeName name="android.view.animation.DecelerateInterpolator"/>
+<fullyQualifiedTypeName name="android.view.animation.AccelerateInterpolator"/>
+<fullyQualifiedTypeName name="android.view.animation.AnimationSet"/>
+</qualifiedTypeNameHistroy>
